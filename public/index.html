@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MyChat - Yeison Pomares V1.0</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+
+<body>
+
+
+    <!-- Container: Login-->
+    <div id="login-container">
+        <method method="post" action="/login">
+            <p class="title"><b>M</b>y <b>C</b>hat - Login</p>
+            <p>Username: </p>
+            <input type="text" id="login-username" name="username" placeholder="Write your username">
+            &nbsp;
+            <p>Password: </p>
+            <input type="password" id="login-password" name="password" placeholder="Write your password">
+            &nbsp;
+            <div id="login-message"></div>
+            &nbsp;
+            <button id="button-login">Login</button>
+        </method>
+        </form>
+        <br><br>
+        <p>
+            If you dont have an account, <a href="#" onclick="javascript:showRegister()">Click here</a>
+        </p>
+    </div>
+
+    <!-- Container: Register-->
+    <div id="register-container">
+
+        <p class="title"><b>M</b>y <b>C</b>hat - Register</p>
+
+        <p>Username: </p>
+        <input type="text" id="register-username" name="register-username" placeholder="Write your username">
+        &nbsp;
+        <p>Password: </p>
+        <input type="password" id="register-password1" name="register-password1" placeholder="Write your password">
+        &nbsp;
+        <p>Confirm Password: </p>
+        <input type="password" id="register-password2" name="register-password2" placeholder="Write your password">
+        &nbsp;
+        <div id="register-message"></div>
+        &nbsp;
+        <button id="register-button">Register</button>
+
+        <br><br>
+        <p>
+            <a href="#" onclick="javascript:showLogin()">Cancel</a>
+        </p>
+    </div>
+
+
+    <!-- Container: Chat-->
+    <div id="chat-container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">My Chat</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="logout.html">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+                </form>
+            </div>
+        </nav>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item active">Channels</li>
+                            <a id="menu-chat-general" href="#" class="list-group-item list-group-item-action">
+                                <ul>
+                                    <li>General</li>
+                                </ul>
+                            </a>
+                        </ul>
+                        <br>
+                        <ul class="list-group" id="users">
+                            <li class="list-group-item active">Users</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="card">
+                    <div class="card-body">
+
+                        <!-- start - chat - container -->
+
+                        <div id="chat-general">
+                            <div id="chat-window">
+                                <div id="output-general" style="height: 550px;overflow-x: scroll;">
+                                    <!-- Mensajes -->
+                                </div>
+                                <div id="actions-general">
+                                    <!-- Mensajes -->
+                                </div>
+                            </div>
+                            <input type="hidden" id="chat-username" id="chat-username">
+                            <input type="text" id="message" placeholder="Message">
+                            <button id="send">Send Message</button>
+                        </div>
+                        <input type="hidden" id="counter" id="counter" value="0">
+                        <div id="chats">
+                        </div>
+                        <!-- end - caht - container-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="assets/scripts/chat.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>
